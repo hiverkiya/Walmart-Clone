@@ -4,6 +4,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "i5.wallmartimages.com",
+      },
+      {
+        protocol: "https",
         hostname: "links.papareact.com",
       },
     ],
