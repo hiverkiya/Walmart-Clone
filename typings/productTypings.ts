@@ -3,7 +3,7 @@ export interface WalmartProductResult {
   job: JobDetails;
 }
 export interface ProductContent {
-  content: ProductContent;
+  content: Product;
   created_at: string;
   updated_at: string;
   page: number;

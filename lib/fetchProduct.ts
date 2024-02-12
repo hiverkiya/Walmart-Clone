@@ -1,3 +1,5 @@
+import { ProductContent } from "@/typings/productTypings";
+
 async function fetchProduct(url: string) {
   const username = process.env.OXYLABS_USERNAME;
   const password = process.env.OXYLABS_PASSWORD;
@@ -21,5 +23,15 @@ async function fetchProduct(url: string) {
     next: {
       revalidate: 60 * 60 * 24, // refresh the cache after one day
     },
-  });
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.results.length === 0) return;
+      const result: ProductContent = data.results[0];
+      const product = result.content;
+      return product;
+    })
+    .catch((err) => console.log(err));
+  return response;
 }
+export default fetchProduct;
