@@ -5,5 +5,7 @@ export function getCartTotal(products: Product[]): string {
       accumulator + currentProduct.price,
     0
   );
-  return `${products[0]?.currency} ${total.toFixed(2)}`;
+  return `${
+    products[0]?.currency ? products[0]?.currency : "$"
+  } ${total.toFixed(2)}`;
 }

@@ -92,7 +92,7 @@ function Header() {
               {" "}
               {cart.length > 0 ? `${cart.length} items` : "No Items"}
             </p>
-            <p>{total}</p>
+            <p>{cart.length > 0 ? `${total}` : "0"}</p>
           </div>{" "}
         </Link>
       </div>
