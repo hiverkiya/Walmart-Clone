@@ -25,6 +25,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
+import AddToCart from "@/components/AddToCart";
 async function ProductPage({ searchParams: { url } }: Props) {
   const product = await fetchProduct(url);
   if (!product) return notFound();
@@ -93,6 +94,7 @@ async function ProductPage({ searchParams: { url } }: Props) {
         )}
 
         {/**Add to Cart button */}
+        <AddToCart product={product} />
         <hr />
 
         <h3 className="font-bold text-xl pt-10">Specifications</h3>
