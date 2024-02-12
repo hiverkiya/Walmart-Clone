@@ -18,6 +18,7 @@ function Header() {
 
   const total = getCartTotal(cart);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const input = e.currentTarget.input.value;
     router.push(`/search?q=${input}`);
   };

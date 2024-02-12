@@ -1,5 +1,3 @@
-import { LargeNumberLike } from "crypto";
-
 export interface SearchResult {
   results: Result[];
   total_results: number;
