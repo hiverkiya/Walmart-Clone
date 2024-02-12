@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 function BasketInterception() {
   const router = useRouter();
   function onDismiss() {
