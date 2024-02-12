@@ -6,7 +6,7 @@ interface CartState {
   addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
 }
-const useCartStore = create<CartState>()(
+export const useCartStore = create<CartState>()(
   devtools(
     persist(
       (set, get) => ({

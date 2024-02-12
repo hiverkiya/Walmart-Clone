@@ -10,8 +10,13 @@ import {
   User,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useCartStore } from "@/store";
+import { getCartTotal } from "@/lib/getCartTotal";
 function Header() {
   const router = useRouter();
+  const cart = useCartStore((state) => state.cart);
+
+  const total = getCartTotal(cart);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const input = e.currentTarget.input.value;
     router.push(`/search?q=${input}`);
@@ -83,8 +88,11 @@ function Header() {
         >
           <ShoppingCart size={20} />
           <div>
-            <p className="text-xs font-extralight"> No Items</p>
-            <p>Total</p>
+            <p className="text-xs font-extralight">
+              {" "}
+              {cart.length > 0 ? `${cart.length} items` : "No Items"}
+            </p>
+            <p>{total}</p>
           </div>{" "}
         </Link>
       </div>
