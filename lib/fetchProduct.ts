@@ -21,7 +21,7 @@ async function fetchProduct(url: string) {
         "Basic " + Buffer.from(`${username}:${password}`).toString("base64"),
     },
     next: {
-      revalidate: 60 * 60 * 24, // refresh the cache after one day
+      revalidate: 60 * 60 * 24 * 365, // refresh the cache after a year
     },
   })
     .then((response) => response.json())

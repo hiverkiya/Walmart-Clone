@@ -22,7 +22,7 @@ function fetchSearch(searchTerm: string) {
         "Basic " + Buffer.from(`${username}:${password}`).toString("base64"),
     },
     next: {
-      revalidate: 60 * 60,
+      revalidate: 60 * 60 * 24 * 365,
     },
   })
     .then((res) => res.json())
